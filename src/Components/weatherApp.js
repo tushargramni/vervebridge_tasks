@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import locationIcon from "./Icons/location.svg";
+import locationIcon from "../Icons/location.svg";
 import searchIcon from "./Icons/search.svg";
 import './style.css';
 
