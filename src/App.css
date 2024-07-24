@@ -15,7 +15,18 @@ body {
   min-height: 100vh;
   background: hsla(0, 100%, 100%, 0.45);
 }
-
+.sun{
+  position: absolute;
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  0%{
+    transform: scale(0.5) rotate(0deg);
+  }
+  100%{
+    transform: scale(1) rotate(360deg);
+  }
+}
 .rain {
   display: flex;
   flex-wrap: wrap;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import locationIcon from "../Icons/location.svg";
 import searchIcon from "../Icons/search.svg";
+import sunlocation from "../Icons/sun.svg";
 import "../App.css";
 
 export default function WeatherApp() {
@@ -53,6 +54,9 @@ export default function WeatherApp() {
         {Array.from({ length: 100 }, (_, index) => (
           <div className="lines" key={index}></div>
         ))}
+      </div>
+      <div className="sun">
+        <img src={sunlocation} alt="sun.svg" />
       </div>
 
       <div className="container">
