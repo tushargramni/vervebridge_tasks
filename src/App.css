@@ -265,13 +265,12 @@ input {
   padding: 1rem 0;
   gap: 1rem;
   width: 100%;
-  color: #fff;
-  background: #08aae1;
+  background: #fff;
   justify-content: start;
+  margin: auto;
   box-shadow: 5px 5px 10px #434343, -5px -5px 10px #ffffff;
   border-radius: 1rem;
   margin: auto;
-  justify-content: start;
   align-items: center;
   overflow: auto;
   scroll-behavior: smooth;
