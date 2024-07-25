@@ -109,7 +109,7 @@ export default function WeatherApp() {
                 </p>
               </div>
               <div className="hourly">
-                <h2>Hourly Details</h2>
+                <h2>Weather hourly Details</h2>
                 {day.hours.map((hour, hourIndex) => (
                   <div key={hourIndex} className="hour">
                     <p>Time: {hour.datetime}</p>

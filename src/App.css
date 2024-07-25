@@ -101,8 +101,9 @@ h1 {
   text-align: center;
   font-size: clamp(50px, 1vw, 22px);
   background: #08aae1;
-  border-radius: 20pt;
-  box-shadow: 15px 15px 22px #434343, -5px -5px 50px #ffffff;
+  border-radius: 50pt;
+  /* box-shadow: 5px 5px 10px #d0d8e0,-5px -5px 10px #ffffff; */
+  box-shadow: 5px 5px 10px #434343, -5px -5px 10px #ffffff;
   margin: 1rem auto;
 }
 
@@ -228,6 +229,7 @@ input {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  padding: 1rem 0.5rem;
   border-radius: 1rem;
   background: #08aae1;
   /* box-shadow: 15px 15px 22px #434343,-5px -5px 50px #ffffff; */
