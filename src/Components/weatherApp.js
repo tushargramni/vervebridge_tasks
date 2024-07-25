@@ -98,7 +98,7 @@ export default function WeatherApp() {
                 </p>
                 <p className="raining">
                   <img src={rain} alt="" width={"32px"} />
-                  Conditions: {day.conditions}
+                  {day.conditions}
                 </p>
                 <p className="wind">
                   <img src={wind} alt="" width={"32px"} />
