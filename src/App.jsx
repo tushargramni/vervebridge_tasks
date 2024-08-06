@@ -4,16 +4,16 @@ import top from "./assets/images/top.svg";
 import bottom from "./assets/images/bottom.svg";
 const App = () => {
   return (
-    <div>
-      <div className="top">
-        <img src={top} alt="" />
+    <div className="Container">
+      <div className="wave-container">
+        <img src={top} alt="" className="animated-svg" />
       </div>
       <Quiz />
-      <div className="bottom">
-        <img src={bottom} alt="" />
+      <div className="wave-container">
+        <img src={bottom} alt="" className="animated-svg" />
       </div>
     </div>
-  )
+  );
 }
 
 export default App
