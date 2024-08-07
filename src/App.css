@@ -3,21 +3,45 @@
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  line-break:auto;
   word-break: break-all;
   word-wrap: break-word;
+  word-spacing: normal;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   width: 100%;
-  margin: auto;
-  padding: 1rem;
+  padding: 1rem auto;
   color: white;
   min-height: 100vh;
-  background: hsla(0, 100%, 100%, 0.45);
+  background-image: url("./Icons/Cloud.svg");
+  transition: all .2s linear;
+  animation: cloudy 1.25s linear infinite;
+}
+
+@keyframes cloudy {
+  from{
+    background-image: url("./Icons/Cloud.svg") ;
+    background-position: center ;
+    background-repeat: repeat;
+    
+  }
+  to{
+    background-image: url("./Icons/Cloud.svg") ;
+    background-position: start;
+    background-size: cover;
+    background-repeat: repeat;
+  }
 }
 .sun {
+  z-index: 999;
   position: absolute;
   animation: rotate 1s linear infinite;
 }
@@ -32,20 +56,27 @@ body {
 .rain {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 5px;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
   width: 100%;
   height: 100%;
+  background: transparent;
+  /* background-color: #08aae1; */
   overflow: hidden;
-  background-image: url("./Icons/Cloud@1x-50.0s-983px-322px.svg");
-  background-repeat: repeat;
-  background-position: center;
-  background-size: cover;
+  transition: all .2s linear;
+  /* animation: fade 2s linear infinite; */
 }
-
+@keyframes fade {
+  0%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 .rain .lines {
   height: 5px;
   width: 5px;
@@ -98,14 +129,15 @@ body {
   box-shadow: 15px 15px 22px #434343, -5px -5px 50px #ffffff;
 }
 
-h1 {
+span {
   width: 100%;
   text-align: center;
   font-size: clamp(1.5rem, 4vw, 3rem);
   background: #08aae1;
-  border-radius: 50pt;
+  
+  border-radius: 5pt;
   padding: 0.5rem;
-  box-shadow: 5px 5px 10px #434343, -5px -5px 10px #ffffff;
+  box-shadow: 5px 5px 10px #434343,inset -5px -5px 10px #ffffff;
   margin: 1rem auto;
 }
 
@@ -119,6 +151,7 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 20px;
+  z-index: 99;
   transition: all 0.2s linear;
 }
 
@@ -139,25 +172,28 @@ h1 {
 .input-box {
   display: flex;
   width: 100%;
+  height: 100%;
   align-items: center;
   background: #ffffff;
-  border-radius: 5rem;
+  border-radius: 5pt;
   box-shadow: inset 5px 5px 10px #d0d8e0, inset -5px -5px 10px #ffffff;
-  /* box-shadow: 15px 15px 22px #434343, -5px -5px 50px #ffffff; */
-  padding: 5px 8px;
+  
   margin-bottom: 20px;
 }
 
 input {
   border: none;
-  background: transparent;
   display: flex;
   font-size: 16px;
   color: #333;
+  background: transparent;
   outline: none;
-  margin: 0 1rem;
+  border-radius: 5pt;
+  margin: auto;
+  padding: 1rem;
+  width: calc(100% - 24px);
   overflow: hidden;
-  flex: 1;
+  
 }
 
 .logo img {
@@ -166,7 +202,8 @@ input {
   width: 40px;
   padding: 0.5rem;
   height: 40px;
-  border-radius: 50%;
+  margin: auto 0.5rem;
+  border-radius: 5pt;
   cursor: pointer;
   background-color: #08aae1;
 }
@@ -178,26 +215,28 @@ input {
   width: 100%;
   padding: 1rem;
   font-weight: bold;
-  border-radius: 1rem;
+  border-radius: 5pt;
   overflow: auto;
-  background: #08aae1;
   box-shadow: 15px 15px 22px #434343, -5px -5px 50px #ffffff;
 }
-.details h2{
+.details .det-head{
   margin: auto;
+  font-size: 20px;
   text-align: center;
   color: #fff;
+  border-radius: 5pt;
 }
 .day {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background: #fff;
-  padding: 1rem 0;
-  color: #08aae1;
-  max-width: 100%;
+  background:#08aae1;
+  padding: 1.2rem 0;
+  color: #fff;
+  width: 100%;
   border-radius: 5pt;
   /* box-shadow: 15px 15px 22px #434343, -5px -5px 50px #ffffff; */
   box-shadow: inset 5px 5px 10px #d0d8e0, inset -5px -5px 10px #ffffff;
@@ -214,7 +253,7 @@ input {
   gap: 1rem;
   padding: 1rem;
   border: solid 2px #08aae1;
-  /* box-shadow: 15px 15px 22px #434343,-5px -5px 50px #ffffff; */
+  box-shadow: 15px 15px 22px #434343,-5px -5px 50px #ffffff;
 }
 .condi img {
   border-radius: 50%;
@@ -234,17 +273,21 @@ input {
   max-width: 100%;
   min-width: max-content;
   flex-wrap: wrap;
+  overflow: auto;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   box-shadow: inset 5px 5px 10px #d0d8e0, inset -5px -5px 10px #ffffff;
 }
+
 .hourly {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  /* border: solid 2px salmon; */
   justify-content: center;
+  margin: auto;
   gap: 1.25rem;
   width: 98%;
   height: 100%;
@@ -259,20 +302,19 @@ input {
 .hour {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   overflow: auto;
   padding: 1rem 0;
   gap: 1rem;
   width: 100%;
-  background: #fff;
-  justify-content: start;
-  margin: auto;
+  color: white;
+  background: #08aae1;
   box-shadow: 5px 5px 10px #434343, -5px -5px 10px #ffffff;
-  border-radius: 1rem;
+  border-radius: 5pt;
   margin: auto;
-  align-items: center;
-  overflow: auto;
+  /* border: solid 4px firebrick; */
   scroll-behavior: smooth;
 }
 .condi-2 {
@@ -282,4 +324,8 @@ input {
   flex: 1;
   flex-wrap: wrap;
   overflow: auto;
+}
+.condi-2 >*{
+  flex: 1;
+  flex-wrap: wrap;
 }

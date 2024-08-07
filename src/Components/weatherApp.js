@@ -57,7 +57,7 @@ export default function WeatherApp() {
         <img src={locationIcon} alt="location" />
       </div>
       <div className="rain">
-        {Array.from({ length: 100 }, (_, index) => (
+        {Array.from({ length: 200 }, (_, index) => (
           <div className="lines" key={index}></div>
         ))}
       </div>
@@ -65,7 +65,7 @@ export default function WeatherApp() {
         <img src={sunlocation} alt="sun" />
       </div>
       <div className="container">
-        <h1>Let's check weather</h1>
+        <span>Let's check weather</span>
         <div className="input-box">
           <input
             type="text"
@@ -80,7 +80,7 @@ export default function WeatherApp() {
           </div>
         </div>
         <div className="details">
-          <h2>Weather forecast details of 15 days</h2>
+          <span class="det-head">Weather forecast details of 15 days</span>
           {weatherData.map((day, index) => (
             <div className="day" key={index}>
               <p>Date: {day.datetime}</p>
@@ -108,8 +108,8 @@ export default function WeatherApp() {
                   <p>Wind Speed: {day.windspeed}</p>
                 </p>
               </div>
+              <h2>Weather hourly Details</h2>
               <div className="hourly">
-                <h2>Weather hourly Details</h2>
                 {day.hours.map((hour, hourIndex) => (
                   <div key={hourIndex} className="hour">
                     <p>Time: {hour.datetime}</p>
