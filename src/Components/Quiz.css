@@ -2,6 +2,7 @@
     overflow-x: hidden;
 }
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -17,6 +18,49 @@
     box-shadow: 10px 10px 20px hsla(0, 0%, 0%, 0.5), -10px -10px 20px hsla(0, 0%, 100%, 0.1);
 }
 
+.container::before{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px ;
+    top: 0;
+    left: 0;
+    animation: rotating 2s linear infinite;
+    background: conic-gradient(hsla(0, 0%, 0%, 0.25), hsla(0, 0%, 0%, 0.45), hsla(0, 0%, 0%, 0.65), hsla(0, 0%, 0%, 0.25));
+}
+@keyframes rotating {
+    0%{
+        border-radius: 0;
+        transform: scale(0.2) rotate(-360deg);
+    }
+    100%{
+        border-radius: 50%;
+        transform: scale(1.25) rotate(360deg);
+    }
+    
+}
+
+.container::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px ;
+    bottom: 0;
+    right: 0;
+    animation: rotating 2s linear infinite;
+    background: conic-gradient(hsla(0, 100%, 100%, 0.25), hsla(0, 100%, 100%, 0.45), hsla(0, 100%, 100%, 0.65), hsla(0, 100%, 100%, 0.25));
+}
+@keyframes rotating {
+    0%{
+        border-radius: 0;
+        transform: scale(0) rotate(-360deg);
+    }
+    100%{
+        border-radius: 50%;
+        transform: scale(1.25) rotate(360deg);
+    }
+    
+}
 ul {
     display: flex;
     flex-direction: column;
@@ -107,7 +151,7 @@ button:hover {
 
 .correct {
     background: #00d497;
-    box-shadow: inset 5px 5px 10px hsla(0, 0%, 0%, 0.3), inset -5px -5px 10px hsla(0, 0%, 100%, 0.1);
+    box-shadow: inset 5px 5px 10px hsla(0, 0%, 32%, 0.3), inset -5px -5px 10px hsla(0, 0%, 100%, 0.1);
 }
 
 .wrong {
@@ -117,6 +161,43 @@ button:hover {
   .wave-container{
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
     flex-direction: row;
   }
-  
+  .wave-container .anim-1{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    animation: train 2s linear reverse  infinite;
+  }
+  @keyframes train {
+    0%{
+        opacity: 0;
+        filter:hue-rotate(0deg);
+        transform: translateX(0%) ;
+    }
+    100%{
+        opacity: 1;
+        filter:hue-rotate(2000deg);
+        transform: translateX(-100%);
+    }
+  }
+  .wave-container .anim-2{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    transform: translateX(-100%) ;
+    animation: train 2s linear reverse  infinite;
+  }
+  @keyframes train {
+    0%{
+        opacity: 0;
+        filter:hue-rotate(0deg);
+        transform: translateX(-100%) ;
+    }
+    100%{
+        opacity: 1;
+        filter:hue-rotate(2000deg);
+        transform: translateX(0%);
+    }
+  }
