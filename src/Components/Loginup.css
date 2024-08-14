@@ -1,0 +1,68 @@
+.sign-in-form {
+  width: 30%;
+  margin: 0 auto;
+  /* text-align: center; */
+  margin-top: 100px;
+  position: relative;
+  animation: mymove 1.5s ease-in-out;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+@keyframes mymove {
+  from {
+    left: -1500px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: #f2f2f2;
+  width: 100%;
+  padding: 10px;
+  color: black !important;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+input {
+  color: black;
+}
+/* input {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  width: 100%;
+  padding: 10px;
+} */
+label {
+  font-size: 20px;
+  color: rgb(68, 70, 72);
+}
+.loginbtn {
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 20px;
+  color: white;
+  background-color: rgb(23, 40, 65);
+  cursor: pointer;
+}
+.error {
+  margin-top: 20px;
+  font-size: 20px;
+  /* background-color: rgb(32, 167, 9); */
+}

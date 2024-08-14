@@ -1,0 +1,118 @@
+.kit_container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+  margin-top: 200px;
+  flex-wrap: wrap;
+}
+.kit_content {
+  margin-right: 40px;
+
+  width: 40%;
+  height: 500px;
+  background-color: rgb(234, 234, 234);
+  animation: movingright 1.5s ease-in-out;
+  position: relative;
+}
+@keyframes movingright {
+  from {
+    right: -1000px;
+    opacity: 0.8;
+  }
+  to {
+    right: 0px;
+    opacity: 0.9;
+  }
+}
+
+.img_kit {
+  width: 500px;
+  height: 500px;
+}
+.heading_kit {
+  font-size: 50px;
+  margin: 40px;
+}
+.img_container {
+  animation: moving 1.5s ease-in-out;
+  position: relative;
+}
+@keyframes moving {
+  from {
+    left: -1000px;
+    opacity: 0.8;
+  }
+  to {
+    left: 0px;
+    opacity: 0.9;
+  }
+}
+.kit_description {
+  color: rgb(89, 103, 112);
+  font-size: 25px;
+  padding-top: 40px;
+  line-height: 36px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.btn_kit {
+  margin: 30px 0px 0px 0px;
+  padding: 25px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(16, 16, 44);
+  color: white;
+  font-size: 24px;
+  margin: 40px;
+}
+@media screen and (max-width: 900px) {
+  .kit_content {
+    padding: 20px;
+    width: 40%;
+    background-color: rgb(234, 234, 234);
+  }
+  .btn_kit {
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(16, 16, 44);
+    color: white;
+    font-size: 24px;
+    margin: 40px;
+  }
+  .kit_description {
+    margin: 10px;
+  }
+  .kit_content {
+    margin-right: 10px;
+
+    width: 450px;
+    height: 500px;
+    background-color: rgb(234, 234, 234);
+    animation: movingright 1.5s ease-in-out;
+    position: relative;
+  }
+}
+@media screen and (max-width: 600px) {
+  .kit_content {
+    margin-right: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(234, 234, 234);
+    animation: movingright 1.5s ease-in-out;
+    position: relative;
+  }
+  .heading_kit {
+    font-size: 30px;
+    margin: 20px;
+  }
+  .img_kit {
+    width: 100%;
+    height: 100%;
+  }
+}
+/////////
+.footer_header{
+  
+}
